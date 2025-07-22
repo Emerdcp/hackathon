@@ -1,0 +1,90 @@
+*{
+    margin: 0px; /*Remover as margens*/
+    padding: 0px; /*Remover os espaçamentos*/
+    box-sizing: border-box; /*Fazer com que o padding e a borda sejam*/
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif; /*Define a fonte principal da página (se o Segoe UI não estiver disponível, o navegador usará uma fonte sans-serif genérica*/
+  color: #333; /*Define a cor do texto para um tom de cinza escuro (#333)*/
+  line-height: 1.6; /*Aumenta o espaçamento entre as linhas de texto, para uma leitura mais confortável.*/
+  background-color: #a8a8a8; /*Define o fundo da página com um tom de cinza muito claro*/
+  padding-top: 60px;
+}
+
+.container {
+  max-width: 1100px; /* Define a largura máxima da container para 1100px. Isso impede que o conteúdo fique muito largo em telas grandes*/
+  margin: auto; /*Centraliza a container horizontalmente na página*/
+  padding: 10px; /*Adiciona um preenchimento interno de 20px em  os lados, evitando que o conteúdo fique muito colado às bordas*/
+}
+
+header {
+  background: #ffffff; /* Define a cor de fundo do cabeçalho como um tom de cinza - Amarelo vivo */
+  color: #333; /*Define a cor do texto dentro do cabeçalho*/
+  /* padding: 2px 0; Adiciona 20px de espaço acima e abaixo do conteúdo do cabeçalho */
+}
+
+section {
+  padding: 40px 20px;/* Espaçamento interno (40px no topo e 20px nas laterais) */
+  scroll-margin-top: 50px; /* Adiciona uma margem ao rolar a página, útil para menu fixo */
+}
+
+
+footer {
+  background: #333;/* Fundo escuro (cinza escuro) */
+  color: white;/* Texto branco */
+  text-align: center;/* Texto centralizado */
+  padding: 05px;/* Espaçamento interno de 15px */
+}
+
+
+
+
+/*================== CARDS LADO MOVENDO LATERAL ==================*/
+/* Estilo para rolagem lateral */
+.secao-cards {
+  padding: 40px 20px;/* Espaçamento interno (40px no topo e 20px nas laterais) */
+  background-color: #fff;/* Fundo branco */
+}
+
+.container {
+  position: relative;/* Posicionamento relativo para poder usar posicionamento absoluto dentro dele */
+  max-width: 1200px;/* Largura máxima de 1200px */
+  margin: 0 auto; /* Centraliza o container horizontalmente */
+}
+
+.linha-topo {
+  display: flex;/* Usando Flexbox para organizar os itens */
+  justify-content: space-between;/* Distribui os itens igualmente com espaço entre eles */
+  align-items: center;/* Alinha os itens verticalmente no centro */
+  margin-bottom: 20px;/* Espaço abaixo da linha */
+}
+
+.cards-scroll {   
+  overflow-x: auto; /* Permite rolagem horizontal */
+  overflow-y: hidden;/* Desativa a rolagem vertical */
+  /* white-space: nowrap; */ /*----------------------faz diminuir tamanho do card--------------------*/
+  scroll-behavior: smooth;/* Rolagem suave */
+  padding: 10px 0;/* Espaçamento interno de 10px no topo e embaixo */
+}
+
+.cards {
+  display: inline-flex; /* Exibe os cards em linha (como inline-block) mas com propriedades flexíveis */
+  gap: 20px;/* Espaçamento de 20px entre os cards */
+}
+
+.card {
+  /* min-width: 250px; */ /* Comentado aqui, mas se ativado, define uma largura mínima para os cards */
+  background-color: #ffffff;/* Fundo branco */
+  border-radius: 10px;/* Bordas arredondadas */
+  padding: 15px;/* Espaçamento interno de 15px */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);/* Sombra suave ao redor do card */
+  display: inline-block; /* Exibe cada card em linha (semelhante ao inline-flex, mas com comportamento de bloco) */
+  text-align: center; /* Texto centralizado dentro do card */
+}
+
+.card img {
+  width: 100%; /* Largura padrão para todas as imagens */
+  border-radius: 6px;/* Bordas arredondadas nas imagens */
+  margin-bottom: 10px;/* Espaço abaixo das imagens */
+}
