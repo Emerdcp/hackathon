@@ -11,6 +11,13 @@ $telefone = $_POST['telefone'] ?? '';
 $titulo = $_POST['titulo'] ?? '';
 $descricao = $_POST['descricao'] ?? '';
 
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $response['message'] = 'E-mail inválido.';
+    echo json_encode($response);
+    exit;
+}
+
 if (!$categoria || !$nome || !$email || !$telefone || !$titulo) {
     $response['message'] = 'Todos os campos obrigatórios devem ser preenchidos.';
     echo json_encode($response);
