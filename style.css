@@ -1,90 +1,162 @@
-*{
-    margin: 0px; /*Remover as margens*/
-    padding: 0px; /*Remover os espaçamentos*/
-    box-sizing: border-box; /*Fazer com que o padding e a borda sejam*/
+/* ================== CONFIGURAÇÃO GERAL ================== */
+* {
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove espaçamentos padrão */
+    box-sizing: border-box; /* Faz com que padding e border não aumentem a largura/altura do elemento */
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif; /*Define a fonte principal da página (se o Segoe UI não estiver disponível, o navegador usará uma fonte sans-serif genérica*/
-  color: #333; /*Define a cor do texto para um tom de cinza escuro (#333)*/
-  line-height: 1.6; /*Aumenta o espaçamento entre as linhas de texto, para uma leitura mais confortável.*/
-  background-color: #a8a8a8; /*Define o fundo da página com um tom de cinza muito claro*/
-  padding-top: 60px;
+    font-family: 'Segoe UI', sans-serif; /* Fonte principal da página */
+    color: #333; /* Cor do texto padrão */
+    line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
+    background-color: #a8a8a8; /* Fundo da página em tom cinza claro */
+    padding-top: 60px; /* Espaço no topo (caso use menu fixo no futuro) */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);/* Sombra suave ao redor do card */
+    text-align: center; /* Texto centralizado dentro do card */
 }
 
+/* ================== CONTAINER PRINCIPAL ================== */
 .container {
-  max-width: 1100px; /* Define a largura máxima da container para 1100px. Isso impede que o conteúdo fique muito largo em telas grandes*/
-  margin: auto; /*Centraliza a container horizontalmente na página*/
-  padding: 10px; /*Adiciona um preenchimento interno de 20px em  os lados, evitando que o conteúdo fique muito colado às bordas*/
+    max-width: 1200px; /* Largura máxima da área central */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 10px; /* Espaço interno nas laterais */
 }
 
-header {
-  background: #ffffff; /* Define a cor de fundo do cabeçalho como um tom de cinza - Amarelo vivo */
-  color: #333; /*Define a cor do texto dentro do cabeçalho*/
-  /* padding: 2px 0; Adiciona 20px de espaço acima e abaixo do conteúdo do cabeçalho */
-}
-
+/* ================== SEÇÕES ================== */
 section {
-  padding: 40px 20px;/* Espaçamento interno (40px no topo e 20px nas laterais) */
-  scroll-margin-top: 50px; /* Adiciona uma margem ao rolar a página, útil para menu fixo */
+    padding: 40px 20px; /* Espaço interno (topo/baixo e lados) */
+    scroll-margin-top: 50px; /* Margem ao rolar até âncoras (caso use menu fixo) */
 }
 
-
+/* ================== RODAPÉ ================== */
 footer {
-  background: #333;/* Fundo escuro (cinza escuro) */
-  color: white;/* Texto branco */
-  text-align: center;/* Texto centralizado */
-  padding: 05px;/* Espaçamento interno de 15px */
+    background: #333; /* Fundo escuro */
+    color: white; /* Texto branco */
+    text-align: center; /* Centraliza o conteúdo */
+    padding: 5px; /* Espaço interno */
 }
 
+/* ================== MODAL ================== */
 
-
-
-/*================== CARDS LADO MOVENDO LATERAL ==================*/
-/* Estilo para rolagem lateral */
-.secao-cards {
-  padding: 40px 20px;/* Espaçamento interno (40px no topo e 20px nas laterais) */
-  background-color: #fff;/* Fundo branco */
+.modal {
+    display: none; /* Oculta por padrão */
+    position: fixed; /* Fica fixo na tela */
+    z-index: 999; /* Fica sobre os demais elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Ativa rolagem se conteúdo for maior que a tela */
+    background-color: rgba(0,0,0,0.6); /* Fundo escuro semitransparente */
 }
 
-.container {
-  position: relative;/* Posicionamento relativo para poder usar posicionamento absoluto dentro dele */
-  max-width: 1200px;/* Largura máxima de 1200px */
-  margin: 0 auto; /* Centraliza o container horizontalmente */
+/* ================== CONTEÚDO DO MODAL ================== */
+
+.modal-conteudo {
+    background-color: #fff; /* Fundo branco do modal */
+    margin: 5% auto; /* Centraliza verticalmente e horizontalmente */
+    padding: 20px; /* Espaço interno */
+    border: 1px solid #ddd; /* Borda cinza clara */
+    max-width: 600px; /* Largura máxima do modal */
+    border-radius: 12px; /* Bordas arredondadas */
+    position: relative; /* Para posicionar o botão fechar */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2); /* Sombra leve */
 }
 
-.linha-topo {
-  display: flex;/* Usando Flexbox para organizar os itens */
-  justify-content: space-between;/* Distribui os itens igualmente com espaço entre eles */
-  align-items: center;/* Alinha os itens verticalmente no centro */
-  margin-bottom: 20px;/* Espaço abaixo da linha */
+/* ================== ANIMAÇÃO ================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); } /* Começa invisível e acima */
+  to { opacity: 1; transform: translateY(0); } /* Termina visível e na posição normal */
 }
 
-.cards-scroll {   
-  overflow-x: auto; /* Permite rolagem horizontal */
-  overflow-y: hidden;/* Desativa a rolagem vertical */
-  /* white-space: nowrap; */ /*----------------------faz diminuir tamanho do card--------------------*/
-  scroll-behavior: smooth;/* Rolagem suave */
-  padding: 10px 0;/* Espaçamento interno de 10px no topo e embaixo */
+/* ================== BOTÃO FECHAR ================== */
+.fechar {
+    position: absolute; /* Posicionamento livre dentro do modal */
+    top: 10px;
+    right: 15px;
+    font-size: 24px; /* Tamanho do "X" */
+    font-weight: bold; /* Fonte em negrito */
+    color: #aaa;
+    cursor: pointer; /* Cursor de clique */
 }
 
+.fechar:hover {
+    color: #000; /* Cor ao passar o mouse */
+}
+
+/* ================== CAMPOS DE FORMULÁRIO ================== */
+
+.modal-conteudo label {
+  font-weight: 600; /* Deixa os rótulos em negrito */
+  margin-top: 10px; /* Espaço acima dos rótulos */
+  display: block; /* Faz o label ocupar a linha toda */
+  color: #333; /* Cor escura para melhor leitura */
+}
+
+/* ================== ÁREA DOS CARDS ================== */
 .cards {
-  display: inline-flex; /* Exibe os cards em linha (como inline-block) mas com propriedades flexíveis */
-  gap: 20px;/* Espaçamento de 20px entre os cards */
+    display: flex; /* Layout flexível em linha */
+    flex-wrap: wrap; /* Quebra linha se faltar espaço */
+    gap: 20px; /* Espaço entre os cards */
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    margin-top: 30px; /* Espaço acima da área de cards */
+    padding: 40px 20px; /* Espaço interno nas laterais */
 }
 
 .card {
-  /* min-width: 250px; */ /* Comentado aqui, mas se ativado, define uma largura mínima para os cards */
-  background-color: #ffffff;/* Fundo branco */
-  border-radius: 10px;/* Bordas arredondadas */
-  padding: 15px;/* Espaçamento interno de 15px */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);/* Sombra suave ao redor do card */
-  display: inline-block; /* Exibe cada card em linha (semelhante ao inline-flex, mas com comportamento de bloco) */
-  text-align: center; /* Texto centralizado dentro do card */
+    background-color: #ffffff; /* Fundo branco para o card */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 15px; /* Espaço interno */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra para destacar o card */
+    width: 300px; /* Largura fixa dos cards */
+    text-align: left; /* Alinhamento do conteúdo */
+
 }
 
-.card img {
-  width: 100%; /* Largura padrão para todas as imagens */
-  border-radius: 6px;/* Bordas arredondadas nas imagens */
-  margin-bottom: 10px;/* Espaço abaixo das imagens */
+.card:hover {
+    transform: translate3d(0, -5px, 5px); /* Efeito de elevação ao passar o mouse */
+    transition: transform 0.2s; /* Animação suave para o efeito de hover */
+}
+
+/* ================== BOTÕES ================== */
+
+
+.modal-conteudo button {
+  display: inline-block; /* Permite definir largura/altura e se comporta como elemento em linha */
+  padding: 5px 15px; /* Espaçamento interno: 5px verticalmente e 15px horizontalmente */
+  cursor: pointer; /* Altera o cursor para a mãozinha ao passar por cima */
+  background-color: #ffffff; /* Define a cor de fundo (amarelo/dourado) */
+  color: #004A8D; /* Define a cor do texto como preta */
+  text-decoration: none; /* Remove o sublinhado, geralmente de links */
+  border-radius: 6px; /* Arredonda levemente os cantos do elemento */
+  font-weight: bold; /* Deixa o texto em negrito */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adiciona uma sombra suave para dar profundidade */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Suaviza a transição de cor de fundo e transformações */
+  border: 1px solid #004A8D; /*borda preta fina*/
+}
+
+.modal-conteudo button:hover {
+  background-color: #004A8D;
+  transform: translateY(-1px);
+  border: 1px solid #ffffff; /*borda preta fina*/
+}
+
+.modal-conteudo button:active {
+  transform: scale(0.98);
+}
+
+
+
+/* ================== RESPONSIVO ================== */
+
+@media (max-width: 576px) {
+  .modal-conteudo {
+    padding: 20px; /* Reduz o padding em telas pequenas */
+  }
+
+  .modal-conteudo button {
+    width: 100%; /* Botões ocupam a linha toda no mobile */
+    margin-bottom: 10px; /* Espaço entre eles */
+  }
 }

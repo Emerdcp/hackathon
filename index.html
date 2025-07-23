@@ -41,36 +41,36 @@
             <h3>Inserir no Mural</h3>
             <form id="formInserir">
                 <div class="row g-3">
-                    <div class="col-md-auto">
-                        <label for="servico">Serviço</label>
-                            <select name="tipo" id="tipo" class="form-control" required>
+                    <div class="col-md-12">
+                        <label for="categoria">Categoria</label>
+                            <select name="categoria" id="categoria" class="form-control" required>
                                 <option value="V">Vendo</option>
                                 <option value="O">Ofereço</option>
                             </select>    
                     </div>
-                    <div class="col-md-auto">
+                    <div class="col-md-12">
                         <label for="nome" class="form-label">Nome</label>
                         <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" maxlength="100" required>
                     </div>
-                    <div class="col-md-auto">
+                    <div class="col-md-12">
                         <label for="email" class="form-label">E-mail</label>
                         <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" maxlength="100" required>
                     </div>
-                    <div class="col-md-auto">
+                    <div class="col-md-12">
                         <label for="telefone" class="form-label">Telefone</label>
                         <input type="text" class="form-control" id="telefone" placeholder="Digite seu telefone" maxlength="20" required>
                     </div>
-                    <div class="col-md-auto">
+                    <div class="col-md-12">
                         <label for="titulo" class="form-label">Título</label>
                         <input type="text" class="form-control" id="titulo" placeholder="Digite o título" maxlength="100" required>
                     </div>
-                    <div class="col-md-auto">
+                    <div class="col-md-12">
                         <label for="descricao" class="form-label">Descrição</label>
                         <textarea class="form-control" id="descricao" placeholder="Digite a descrição" maxlength="500" required></textarea>
                     </div>
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="button" class="btn btn-secondary" onclick="fecharModal('modalInserir')">Cancelar</button>
                 </div>
-                <button type="submit">Salvar</button>
-                <button type="button" onclick="fecharModal('modalInserir')">Cancelar</button>
             </form>
         </div>
     </div>

@@ -1,4 +1,4 @@
-// Funções para abrir e fechar modal
+// ================== MODAL ==================
 function abrirInserir() {
     document.getElementById("modalInserir").style.display = "block";
 }
@@ -7,18 +7,18 @@ function fecharInserir() {
     document.getElementById("modalInserir").style.display = "none";
 }
 
-// Enviar formulário
+// ================== ENVIAR FORMULÁRIO ==================
 document.getElementById("formInserir").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const tipo = document.getElementById("tipo").value;
+    const categoria = document.getElementById("categoria").value;
     const nome = document.getElementById("nome").value;
     const email = document.getElementById("email").value;
     const telefone = document.getElementById("telefone").value;
     const titulo = document.getElementById("titulo").value;
     const descricao = document.getElementById("descricao").value;
 
-    const novoCard = { tipo, nome, email, telefone, titulo, descricao };
+    const novoCard = { categoria, nome, email, telefone, titulo, descricao };
 
     let mural = JSON.parse(localStorage.getItem("mural")) || [];
     mural.push(novoCard);
@@ -29,17 +29,17 @@ document.getElementById("formInserir").addEventListener("submit", function (e) {
     fecharInserir();
 });
 
-// Mostrar os cards
+// ================== MOSTRAR CARDS ==================
 function mostrarCards() {
     const mural = JSON.parse(localStorage.getItem("mural")) || [];
     const cardsContainer = document.querySelector(".cards");
     cardsContainer.innerHTML = "";
 
-    mural.forEach((item, index) => {
+    mural.forEach((item) => {
         const card = `
             <div class="card m-2 p-3" style="width: 18rem;">
-                <h5 class="card-title">${item.titulo}</h5>
-                <p><strong>${item.tipo === 'V' ? 'Vendo' : 'Ofereço'}</strong></p>
+                <h3 class="card-title">${item.titulo}</h3>
+                <p><strong>${item.categoria === 'V' ? 'Vendo' : 'Ofereço'}</strong></p>
                 <p>${item.descricao}</p>
                 <p><strong>Nome:</strong> ${item.nome}</p>
                 <p><strong>Email:</strong> ${item.email}</p>
@@ -50,5 +50,7 @@ function mostrarCards() {
     });
 }
 
-// Mostrar cards ao carregar a página
-window.onload = mostrarCards;
+// ================== AO CARREGAR A PÁGINA ==================
+window.onload = function () {
+    mostrarCards();
+};
