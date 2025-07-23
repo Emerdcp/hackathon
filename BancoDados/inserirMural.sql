@@ -5,6 +5,6 @@ create table cad_mural (
     email varchar(100) COMMENT 'EMAIL PESSOA',
     telefone varchar(20) COMMENT 'TELEFONE PESSOA',
     titulo varchar(100) COMMENT 'TÍTULO PESSOA',
-    descricao varchar(250)
+    descricao varchar(250),
     data_criacao datetime default current_timestamp
 );
