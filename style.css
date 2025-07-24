@@ -31,6 +31,13 @@ footer {
     color: white; /* Texto branco */
     text-align: center; /* Centraliza o conteúdo */
     padding: 5px; /* Espaço interno */
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
 }
 
 /* ================== MODAL ================== */
@@ -214,7 +221,7 @@ footer {
   background: #e0e0e0; /* Cinza claro Define o fundo da seção hero como um tom de cinza claro*/
   text-align: center; /*Centraliza o texto dentro dessa seção*/
   position: relative;/* Define o posicionamento relativo do elemento, permitindo o posicionamento absoluto de elementos internos dentro dele */
-  background-image: url('imagens/senac.png');/* Define a imagem de fundo do elemento com o caminho fornecido */
+  background-image: url('imagens/mural.webp');/* Define a imagem de fundo do elemento com o caminho fornecido */
   background-size: cover;/* Faz a imagem de fundo cobrir todo o espaço do elemento, mantendo a proporção e cortando a imagem se necessário */
   background-position: center;/* Posiciona a imagem de fundo no centro do elemento */
   background-repeat: no-repeat;/* Impede que a imagem de fundo se repita se o tamanho do elemento for maior que a imagem */

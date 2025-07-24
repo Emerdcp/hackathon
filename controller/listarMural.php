@@ -1,12 +1,23 @@
 <?php
-require_once '../config.php';
+
+include("../config.php");
+
+// Cabeçalho para garantir que o retorno seja JSON
 header('Content-Type: application/json');
 
-// Exibe erros para debug temporário
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+// Consulta com alias minúsculos para facilitar no JS
+$sql = "SELECT 
+    ID AS id, 
+    CATEGORIA AS categoria, 
+    NOME AS nome, 
+    EMAIL AS email, 
+    TELEFONE AS telefone, 
+    TITULO AS titulo, 
+    DESCRICAO AS descricao 
+FROM CAD_MURAL 
+WHERE ST_REGISTRO = 'A'
+ORDER BY ID DESC";
 
-$sql = "SELECT ID, CATEGORIA, NOME, EMAIL, TELEFONE, TITULO, DESCRICAO FROM CAD_MURAL ORDER BY ID DESC";
 $result = $conn->query($sql);
 
 $dados = [];
@@ -15,9 +26,11 @@ if ($result) {
     while ($row = $result->fetch_assoc()) {
         $dados[] = $row;
     }
-    echo json_encode($dados, JSON_UNESCAPED_UNICODE);
-} else {
-    echo json_encode(['erro' => 'Erro na consulta: ' . $conn->error]);
 }
 
+echo json_encode($dados);
+
 $conn->close();
+
+?>
+

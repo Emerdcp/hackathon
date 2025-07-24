@@ -10,6 +10,7 @@ $email = $_POST['email'] ?? '';
 $telefone = $_POST['telefone'] ?? '';
 $titulo = $_POST['titulo'] ?? '';
 $descricao = $_POST['descricao'] ?? '';
+$st_registro = $_POST['st_registro'] ?? '';
 
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -18,13 +19,13 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-if (!$categoria || !$nome || !$email || !$telefone || !$titulo) {
+if (!$categoria || !$nome || !$email || !$telefone || !$titulo || !$descricao) {
     $response['message'] = 'Todos os campos obrigatórios devem ser preenchidos.';
     echo json_encode($response);
     exit;
 }
 
-$sql = "INSERT INTO CAD_MURAL (CATEGORIA, NOME, EMAIL, TELEFONE, TITULO, DESCRICAO) VALUES (?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO CAD_MURAL (CATEGORIA, NOME, EMAIL, TELEFONE, TITULO, DESCRICAO, ST_REGISTRO) VALUES (?, ?, ?, ?, ?, ?, 'A')";
 $stmt = $conn->prepare($sql);
 
 if (!$stmt) {

@@ -1,5 +1,6 @@
 <?php
-require_once '../config.php';
+
+include("../config.php");
 
 header('Content-Type: application/json');
 
@@ -10,9 +11,17 @@ if (!$id || !is_numeric($id)) {
     exit;
 }
 
-$sql = "SELECT ID, CATEGORIA, NOME, EMAIL, TELEFONE, TITULO, DESCRICAO 
-        FROM CAD_MURAL 
-        WHERE ID = ?";
+$sql = "SELECT 
+    ID AS id, 
+    CATEGORIA AS categoria, 
+    NOME AS nome, 
+    EMAIL AS email, 
+    TELEFONE AS telefone, 
+    TITULO AS titulo, 
+    DESCRICAO AS descricao 
+FROM CAD_MURAL 
+WHERE ST_REGISTRO = 'A'
+AND ID = ?";
 
 $stmt = $conn->prepare($sql);
 
@@ -34,3 +43,5 @@ if ($result && $result->num_rows > 0) {
 
 $stmt->close();
 $conn->close();
+
+?>

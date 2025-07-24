@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         mensagem.style.display = 'none';
                         if (data.success) {
                             fecharInserir(); // Corrigido
-                            // location.reload(); // opcional
+                            location.reload(); // opcional
                         }
                     }, 3000);
                 })
