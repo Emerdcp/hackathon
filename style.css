@@ -12,6 +12,7 @@ body {
     background-color: #a8a8a8; /* Fundo da página em tom cinza claro */
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);/* Sombra suave ao redor do card */
     text-align: center; /* Texto centralizado dentro do card */
+    padding-bottom: 28px;
 }
 
 .container {
@@ -31,7 +32,6 @@ footer {
     color: white; /* Texto branco */
     text-align: center; /* Centraliza o conteúdo */
     padding: 5px; /* Espaço interno */
-
     position: fixed;
     bottom: 0;
     left: 0;
@@ -429,4 +429,24 @@ footer {
   .anuncios {
     width: 80%;             /* Em telas pequenas, usa 80% da largura do container */
   }
+}
+
+/*================== BOTÃO CARREGAR MAIS ==================*/
+
+#btnCarregarMais {
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  background-color: #F7941D; /* mesma cor de .vendo */
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+#btnCarregarMais:hover {
+  background-color: #e68310;
 }

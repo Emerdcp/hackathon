@@ -36,6 +36,9 @@ include_once 'controller/verificaInativacao.php';
             <div class="cards row" id="listaAnuncios">
 
             </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <button id="btnCarregarMais" class="">Carregar mais</button>
+            </div>
         </div>
     </section>
 
@@ -78,6 +81,7 @@ include_once 'controller/verificaInativacao.php';
                         <textarea class="form-control" id="descricao" name="descricao" placeholder="Digite a descrição" maxlength="250"
                             required></textarea>
                     </div>
+
                     <div class="d-flex gap-2 mt-3">
                         <button type="submit" class="btn btn-primary flex-fill">Salvar</button>
                         <button type="button" class="btn btn-secondary flex-fill" onclick="fecharInserir('modalInserir')">Cancelar</button>

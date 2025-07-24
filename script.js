@@ -2,14 +2,23 @@ function fecharVisualizar() {
     document.getElementById("modalVisualizar").style.display = "none";
 }
 
-// ================== MOSTRAR CARDS ==================
+// ================== MOSTRAR CARDS e CARREGA MAIS ==================
+
+let offset = 0;
+const limit = 4; // Quantos itens por clique
+
 async function mostrarCards() {
-    const cardsContainer = document.querySelector(".cards");
-    cardsContainer.innerHTML = "";
+    const cardsContainer = document.getElementById("listaAnuncios");
 
     try {
-        const response = await fetch("controller/listarMural.php");
+        const response = await fetch(`controller/listarMural.php?offset=${offset}&limit=${limit}`);
         const mural = await response.json();
+
+        // Se não vierem mais itens, esconde o botão
+        if (mural.length === 0) {
+            document.getElementById("btnCarregarMais").style.display = "none";
+            return;
+        }
 
         mural.forEach((item) => {
             const numeroLimpo = item.telefone.replace(/\D/g, '');
@@ -41,14 +50,24 @@ async function mostrarCards() {
                     </div>
                 </div>
             </div>
-        `;
+            `;
             cardsContainer.innerHTML += card;
         });
+
+        // Atualiza o offset para próxima chamada
+        offset += mural.length;
 
     } catch (error) {
         console.error("Erro ao carregar mural:", error);
     }
 }
+
+// Chamar a primeira vez ao carregar a página
+mostrarCards();
+
+// Ao clicar no botão “Carregar mais”
+document.getElementById("btnCarregarMais").addEventListener("click", mostrarCards);
+
 
 // ================== AO CARREGAR A PÁGINA ==================
 window.onload = function () {

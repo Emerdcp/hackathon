@@ -5,6 +5,11 @@ include("../config.php");
 // Cabeçalho para garantir que o retorno seja JSON
 header('Content-Type: application/json');
 
+// Recupera os parâmetros de paginação
+$offset = isset($_GET['offset']) ? intval($_GET['offset']) : 0;
+$limit  = isset($_GET['limit']) ? intval($_GET['limit']) : 6;
+
+
 // Consulta com alias minúsculos para facilitar no JS
 $sql = "SELECT 
     ID AS id, 
@@ -16,7 +21,8 @@ $sql = "SELECT
     DESCRICAO AS descricao 
 FROM CAD_MURAL 
 WHERE ST_REGISTRO = 'A'
-ORDER BY ID DESC";
+ORDER BY ID DESC
+LIMIT $offset, $limit";
 
 $result = $conn->query($sql);
 
