@@ -7,14 +7,14 @@ if ($_SERVER['SERVER_NAME'] == 'localhost') {
     $usuario = "root";
     $senha = ""; // SEM senha por padrão no XAMPP
     $banco = "senacmural";
-    // $porta = 3080;          // coloque 3080 se realmente alterou a porta do MySQL
-    $porta = 3306;          // coloque 3080 se realmente alterou a porta do MySQL
+    $porta = 3080;          // coloque 3080 se realmente alterou a porta do MySQL
+    // $porta = 3306;          // coloque 3080 se realmente alterou a porta do MySQL
 } else {
     // Produção
-    $servidor = "sql.seuprovedor.com";
-    $usuario = "usuario_producao";
-    $senha = "senha_producao";
-    $banco = "senacmural";
+    $servidor = "sql202.infinityfree.com";
+    $usuario = "if0_39545934";
+    $senha = "q3V3WcFCvJr";
+    $banco = "if0_39545934_senacmural";
     $porta = 3306; // coloque 3080 se realmente alterou a porta do MySQL
 }
 

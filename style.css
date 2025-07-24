@@ -129,6 +129,18 @@ footer {
   transform: scale(0.98);
 }
 
+/* ================== BOTÃO CANCELAR ================== */
+.modal-conteudo .btn.btn-secondary {
+  background-color: #004A8D; /* Azul por padrão */
+  color: white;              /* Texto branco */
+}
+
+.modal-conteudo .btn.btn-secondary:hover {
+  background-color: #ffffff; /* Fica branco no hover */
+  color: #004A8D;            /* Texto azul no hover */
+  border: 1px solid #004A8D; /* Borda azul */
+}
+
 /* ================== ÁREA DOS CARDS ================== */
 .cards {
     display: flex; /* Layout flexível em linha */
@@ -204,6 +216,10 @@ footer {
   padding: 10px;
   border-radius: 5px;
   display: none;
+  text-align: center; /* Alinha o texto principal */
+}
+.alerta * {
+  text-align: center; /* Garante que filhos também respeitem */
 }
 .alerta.sucesso {
   color: #155724;
@@ -216,12 +232,14 @@ footer {
   border: 1px solid #f5c6cb;
 }
 
+
+
 /*================== HERO ==================*/
 .hero {
   background: #e0e0e0; /* Cinza claro Define o fundo da seção hero como um tom de cinza claro*/
   text-align: center; /*Centraliza o texto dentro dessa seção*/
   position: relative;/* Define o posicionamento relativo do elemento, permitindo o posicionamento absoluto de elementos internos dentro dele */
-  background-image: url('imagens/mural.webp');/* Define a imagem de fundo do elemento com o caminho fornecido */
+  background-image: url('imagens/senac.png');/* Define a imagem de fundo do elemento com o caminho fornecido */
   background-size: cover;/* Faz a imagem de fundo cobrir todo o espaço do elemento, mantendo a proporção e cortando a imagem se necessário */
   background-position: center;/* Posiciona a imagem de fundo no centro do elemento */
   background-repeat: no-repeat;/* Impede que a imagem de fundo se repita se o tamanho do elemento for maior que a imagem */
@@ -396,4 +414,19 @@ footer {
   height: auto !important;
   margin: 5px 0;
   vertical-align: middle !important;
+}
+
+/*================== IMAGEM ANUNCIO NO MODAL ==================*/
+.anuncios {
+  display: block;           /* Faz a imagem se comportar como bloco */
+  margin: 0 auto;           /* Centraliza horizontalmente */
+  max-width: 100%;          /* Faz a imagem se ajustar ao tamanho da tela */
+  height: auto;             /* Mantém a proporção */
+  width: 300px;             /* Tamanho máximo desejado (ajuste como quiser) */
+}
+
+@media (max-width: 600px) {
+  .anuncios {
+    width: 80%;             /* Em telas pequenas, usa 80% da largura do container */
+  }
 }

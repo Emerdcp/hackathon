@@ -16,7 +16,7 @@ async function mostrarCards() {
             const tipoClasseBtn = item.categoria === 'V' ? 'btn-vendo' : 'btn-ofereco';
 
             const card = `
-            <div class="card m-2 p-3 d-flex flex-column justify-content-between" style="width: 18rem; height: 100%;">
+            <div class="card m-2 p-3 d-flex flex-column justify-content-between" style="width: 18rem; height: 30rem">
                 <span class="categoria ${item.categoria === 'V' ? 'vendo' : 'ofereco'}">
                     ${item.categoria === 'V' ? 'Vendo' : 'Ofereço'}
                 </span>
@@ -28,10 +28,10 @@ async function mostrarCards() {
                 <div class="mt-auto">
                     <div class="mt-2 d-flex gap-2">
                         <a href="tel:${numeroLimpo}" class="${tipoClasseBtn} botao-metade" target="_blank">
-                            <img src="imagens/telefone.png" alt="Telefone" class="telWhats">Ligar
+                            <img src="imagens/telefone.png" alt="Telefone" class="telWhats"> Ligar
                         </a>
                         <a href="https://wa.me/${numeroLimpo}" class="${tipoClasseBtn} botao-metade" target="_blank">
-                            <img src="imagens/whatsapp.png" alt="Telefone" class="telWhats">Whats
+                            <img src="imagens/whatsapp.png" alt="Telefone" class="telWhats"> Whats
                         </a>
                     </div>
                     <div class="mt-2">
@@ -184,10 +184,10 @@ function exibirCards(mural) {
                 <div class="mt-auto">
                     <div class="mt-2 d-flex gap-2">
                         <a href="tel:${numeroLimpo}" class="${tipoClasseBtn} botao-metade" target="_blank">
-                            <img src="imagens/telefone.png" alt="Telefone" class="telWhats">Ligar
+                            <img src="imagens/telefone.png" alt="Telefone" class="telWhats"> Ligar
                         </a>
                         <a href="https://wa.me/${numeroLimpo}" class="${tipoClasseBtn} botao-metade" target="_blank">
-                            <img src="imagens/whatsapp.png" alt="WhatsApp" class="telWhats">Whats
+                            <img src="imagens/whatsapp.png" alt="WhatsApp" class="telWhats"> Whats
                         </a>
                     </div>
                     <div class="mt-2">

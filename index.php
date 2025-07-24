@@ -1,3 +1,7 @@
+<?php 
+include_once 'controller/verificaInativacao.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -24,9 +28,11 @@
         </div>
     </section>
 
+    
     <!--================== BARRA DE NAVEGAÇÃO ==================-->
     <section>
         <div class="container">
+            <img src="imagens/anuncios.png" class="anuncios" alt="Anúncios">
             <div class="cards row" id="listaAnuncios">
 
             </div>
@@ -122,10 +128,10 @@
             <p><strong>Telefone:</strong> <span id="visualizarTelefone"></span></p>
             <div class="mt-2 d-flex gap-2">
                 <a id="linkLigar" href="#" class="botao-metade" target="_blank">
-                    <img src="imagens/telefone.png" alt="Telefone" class="telWhats">Ligar
+                    <img src="imagens/telefone.png" alt="Telefone" class="telWhats"> Ligar
                 </a>
                 <a id="linkWhatsapp" href="#" class="botao-metade" target="_blank">
-                    <img src="imagens/whatsapp.png" alt="WhatsApp" class="telWhats">Whats
+                    <img src="imagens/whatsapp.png" alt="WhatsApp" class="telWhats"> Whats
                 </a>
             </div>
         </div>
@@ -135,7 +141,7 @@
     <!--================== INFORMAÇÃO DO REDAPÉ ==================-->
     <footer>
         <div class="container">
-            <p style="text-align: center;">&copy; Mural do Empreendedorismo.</p>
+            <p style="text-align: center;">&copy; Todos os Direitos Reservados. Mural do Empreendedorismo.</p>
         </div>
     </footer>
 
