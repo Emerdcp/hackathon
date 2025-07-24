@@ -15,7 +15,7 @@ if ($_SERVER['SERVER_NAME'] == 'localhost') {
     $usuario = "usuario_producao";
     $senha = "senha_producao";
     $banco = "senacmural";
-    $porta = 3380; // coloque 3080 se realmente alterou a porta do MySQL
+    $porta = 3306; // coloque 3080 se realmente alterou a porta do MySQL
 }
 
 $conn = new mysqli($servidor, $usuario, $senha, $banco, $porta);
