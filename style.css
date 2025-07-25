@@ -443,3 +443,28 @@ footer {
 #btnCarregarMais:hover {
   background-color: #e68310;
 }
+
+/*================== CARD VIZUALIZAÇÃO CATEGORIA ==================*/
+.btn-categoria {
+    font-weight: bold;
+    color: white;
+    padding: 10px 0;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Cores iguais às dos botões de ação */
+.btn-vendo {
+    background-color: #f39c12;
+}
+
+.btn-ofereco {
+    background-color: #34495e;
+}
+
+/*================== IMAGEM DA VIZUALIZAÇÃO NO VER MAIS ==================*/
+.visualizar-imagem {
+    max-height: 300px;
+    object-fit: contain;
+}

@@ -18,7 +18,8 @@ $sql = "SELECT
     EMAIL AS email, 
     TELEFONE AS telefone, 
     TITULO AS titulo, 
-    DESCRICAO AS descricao 
+    DESCRICAO AS descricao ,
+    IMAGEM AS imagem
 FROM CAD_MURAL 
 WHERE ST_REGISTRO = 'A'
 ORDER BY ID DESC

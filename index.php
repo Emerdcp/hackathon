@@ -46,7 +46,7 @@ include_once 'controller/verificaInativacao.php';
         <div class="modal-conteudo">
             <span class="fechar" onclick="fecharInserir()">&times;</span>
             <h3>Inserir no Mural</h3>
-            <form id="formInserir">
+            <form id="formInserir" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-12">
                         <label for="categoria">Categoria</label>
@@ -79,6 +79,11 @@ include_once 'controller/verificaInativacao.php';
                         <label for="descricao" class="form-label">Descrição</label>
                         <textarea class="form-control" id="descricao" name="descricao" placeholder="Digite a descrição" maxlength="250"
                             required></textarea>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="imagem" class="form-label">Imagem</label>
+                        <input type="file" class="form-control" id="imagem" name="imagem" accept="image/*" required>
+                        <small class="text-muted"><b><i>A imagem deve ter no máximo 2MB.</i></b></small>
                     </div>
                     <div class="d-flex gap-2 mt-3">
                         <button type="submit" class="btn btn-primary flex-fill">Salvar</button>
@@ -123,7 +128,15 @@ include_once 'controller/verificaInativacao.php';
     <div id="modalVisualizar" class="modal">
         <div class="modal-conteudo">
             <span class="fechar" onclick="fecharVisualizar()">&times;</span>
-            <h3 id="visualizarTitulo"></h3>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div id="visualizarCategoria" class="btn-categoria w-100 text-center">Categoria</div>
+                <span class="fechar" onclick="fecharVisualizar()">&times;</span>
+            </div>
+            <h3 id="visualizarTitulo" class="text-center mt-2 mb-3 fw-bold"></h3>
+            <!-- <img id="visualizarImagem" src="" alt="Imagem do anúncio" class="img-fluid mb-2" style="height: 180px; object-fit: cover;"> -->
+            <div class="text-center">
+                <img id="visualizarImagem" src="" alt="Imagem do anúncio" class="img-fluid mb-3 visualizar-imagem">
+            </div>
             <p id="visualizarDescricao"></p>
             <p><strong>Nome:</strong> <span id="visualizarNome"></span></p>
             <p><strong>Email:</strong> <span id="visualizarEmail"></span></p>
@@ -142,13 +155,15 @@ include_once 'controller/verificaInativacao.php';
     <!--================== INFORMAÇÃO DO REDAPÉ ==================-->
     <footer>
         <div class="container">
-            <p style="text-align: center;">&copy; Todos os Direitos Reservados. Mural do Empreendedorismo.</p>
+            <p style="text-align: center;"><b><i>As negociações são de inteira responsabilidade dos anunciantes, e não do Senac, ok?</b></i></p>
         </div>
     </footer>
 
     <!--================== CHAMADA DO JAVA ==================-->
     <script src="script.js"></script>
     <script src="js/inserirMural.js"></script>
+    <script src="js/filtroMural.js"></script>
+    <script src="js/visualizarMural.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"
         defer></script>

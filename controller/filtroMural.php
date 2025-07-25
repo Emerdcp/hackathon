@@ -15,7 +15,8 @@ $sql = "SELECT
     NOME AS nome, 
     EMAIL AS email, 
     TELEFONE AS telefone, 
-    DESCRICAO AS descricao 
+    DESCRICAO AS descricao,
+    IMAGEM AS imagem
 FROM CAD_MURAL 
 WHERE ST_REGISTRO = 'A'
 AND 1=1";
