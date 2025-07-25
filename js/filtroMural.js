@@ -62,7 +62,7 @@ function exibirCards(mural) {
                         </a>
                     </div>
                     <div class="mt-2">
-                        <div class="btn-ver-mais ${item.categoria === 'V' ? 'vendo' : 'ofereco'}" onclick="abrirVisualizar(${item.ID})">
+                        <div class="btn-ver-mais ${item.categoria === 'V' ? 'vendo' : 'ofereco'}" onclick="abrirVisualizar(${item.id})">
                             Ver mais
                         </div>
                     </div>
