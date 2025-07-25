@@ -28,7 +28,6 @@ include_once 'controller/verificaInativacao.php';
         </div>
     </section>
 
-    
     <!--================== BARRA DE NAVEGAÇÃO ==================-->
     <section>
         <div class="container">
@@ -81,7 +80,6 @@ include_once 'controller/verificaInativacao.php';
                         <textarea class="form-control" id="descricao" name="descricao" placeholder="Digite a descrição" maxlength="250"
                             required></textarea>
                     </div>
-
                     <div class="d-flex gap-2 mt-3">
                         <button type="submit" class="btn btn-primary flex-fill">Salvar</button>
                         <button type="button" class="btn btn-secondary flex-fill" onclick="fecharInserir('modalInserir')">Cancelar</button>
@@ -141,14 +139,12 @@ include_once 'controller/verificaInativacao.php';
         </div>
     </div>
 
-
     <!--================== INFORMAÇÃO DO REDAPÉ ==================-->
     <footer>
         <div class="container">
             <p style="text-align: center;">&copy; Todos os Direitos Reservados. Mural do Empreendedorismo.</p>
         </div>
     </footer>
-
 
     <!--================== CHAMADA DO JAVA ==================-->
     <script src="script.js"></script>
@@ -157,5 +153,4 @@ include_once 'controller/verificaInativacao.php';
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"
         defer></script>
 </body>
-
 </html>

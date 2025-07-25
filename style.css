@@ -12,7 +12,7 @@ body {
     background-color: #a8a8a8; /* Fundo da página em tom cinza claro */
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);/* Sombra suave ao redor do card */
     text-align: center; /* Texto centralizado dentro do card */
-    padding-bottom: 28px;
+    padding-bottom: 50px;
 }
 
 .container {
@@ -37,7 +37,6 @@ footer {
     left: 0;
     width: 100%;
     z-index: 1000;
-
 }
 
 /* ================== MODAL ================== */
@@ -206,8 +205,6 @@ footer {
   min-height: 3.2em; /* Força ocupar duas linhas de altura, mesmo que a descrição seja curta */
 }
 
-
-
 /* ================== ALERTAS ================== */
 .alerta {
   margin-top: 15px;
@@ -231,8 +228,6 @@ footer {
   background-color: #f8d7da;
   border: 1px solid #f5c6cb;
 }
-
-
 
 /*================== HERO ==================*/
 .hero {
@@ -357,7 +352,6 @@ footer {
   background-color: #003a70;
 }
 
-
 .btn-vendo {
   background-color: #F7941D !important;
 
@@ -366,7 +360,6 @@ footer {
   background-color: #004A8D !important;
 
 }
-
 
 .botao-metade {
   flex: 1;
