@@ -12,3 +12,4 @@ if ($dia == '01' && $hora >= 1) {
     $sql = "UPDATE CAD_MURAL SET ST_REGISTRO = 'I' WHERE ST_REGISTRO = 'A'";
     $conn->query($sql);
 }
+?>
