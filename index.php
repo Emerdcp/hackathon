@@ -14,6 +14,22 @@ include_once 'controller/verificaInativacao.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <meta name="description" content="Mural do Empreendedorismo, Vendo / Ofereço" />
+
+
+    <!-- Transforma as Imagens -->
+    <link rel="icon" href="./imagens/aviso16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="./imagens/aviso32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="./imagens/aviso96.png" sizes="96x96" type="image/png">
+
+    <!-- Transforma em APP -->
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="hashtag#fff">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  
+
 </head>
 
 <body>
